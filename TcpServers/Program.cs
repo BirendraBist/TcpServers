@@ -16,7 +16,7 @@ namespace TcpServers
 
         {
             IPAddress localAddress = IPAddress.Loopback;
-            // ip and port of server
+            // ip and port of servers
             TcpListener serverSocket = new TcpListener(localAddress, PORT);
             //starting server
             serverSocket.Start();

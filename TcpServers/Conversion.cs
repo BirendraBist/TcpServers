@@ -13,7 +13,7 @@ namespace TcpServers
     {
         public static void DoIt(TcpClient Client)
         { 
-            Class1 Converter= new Class1();
+            Class1 Converter = new Class1();
             NetworkStream Stream = Client.GetStream();
             StreamReader Reader = new StreamReader(Stream);
             StreamWriter Writer = new StreamWriter(Stream) { AutoFlush = true };
