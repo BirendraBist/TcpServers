@@ -30,7 +30,7 @@ namespace TcpServers
                     TcpClient client = serverSocket.AcceptTcpClient();
                     Console.WriteLine("incoming client");
 
-                    //allows multiple clients
+                   //allows multiple clients
                     Task.Run(() => Conversion.DoIt(client));
 
                 }
