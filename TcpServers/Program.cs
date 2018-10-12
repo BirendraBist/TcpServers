@@ -31,7 +31,7 @@ namespace TcpServers
                     Console.WriteLine("incoming client");
 
                     //allows multiple clients
-                    //Task.Run(() => PerformConversion.DoIt(client));
+                    Task.Run(() => Conversion.DoIt(client));
 
                 }
                 catch (IOException ex)
