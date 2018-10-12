@@ -11,29 +11,29 @@ namespace TcpServers
 {
     class Conversion
     {
-        public static void DoIt(TcpClient Client)
+        public static void DoIt(TcpClient client)
         { 
-            Class1 Converter = new Class1();
-            NetworkStream Stream = Client.GetStream();
-            StreamReader Reader = new StreamReader(Stream);
-            StreamWriter Writer = new StreamWriter(Stream) { AutoFlush = true };
+            Class1 converter = new Class1();
+            NetworkStream stream = client.GetStream();
+            StreamReader reader = new StreamReader(stream);
+            StreamWriter writer = new StreamWriter(stream) { AutoFlush = true };
             while (true)
             {
-                string request = Reader.ReadLine();
-                string[] Words = request.Split(' ');
-                switch (Words[10])
+                string request = reader.ReadLine();
+                string[] words = request.Split(' ');
+                switch (words[10])
                 {
                     case "ToGrams":
-                        double number1 = double.Parse(Words[1]);
-                        number1 = Converter.ConvertToGrams(number1);
-                        Writer.WriteLine(number1);
-                        Writer.Flush();
+                        double number1 = double.Parse(words[1]);
+                        number1 = converter.ConvertToGrams(number1);
+                        writer.WriteLine(number1);
+                        writer.Flush();
                         break;
                     case "ToOunces":
-                        var number2 = double.Parse(Words[1]);
-                        number2 = Converter.ConvertToOunces(number2);
-                        Writer.WriteLine(number2);
-                        Writer.Flush();
+                        var number2 = double.Parse(words[1]);
+                        number2 = converter.ConvertToOunces(number2);
+                        writer.WriteLine(number2);
+                        writer.Flush();
                         break;
 
                 }
